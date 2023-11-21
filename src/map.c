@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:04 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/21 18:36:06 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:46:10 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,9 @@ void	draw_map(t_game *game)
 			j = 0;
 			while (j < game->map.size.x)
 			{
-				printf("%c", game->map.coords[i][j]);
 				draw_img(game, j, i, game->map.coords[i][j]);
 				j++;
 			}
-			printf("\n");
 			i++;
 		}
 	}
