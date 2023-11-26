@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:35:38 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 13:22:43 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:40:07 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,14 @@ int	get_rowcol(t_map *map, char *file)
 
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
+	{
+		close(fd);
 		return (0);
+	}
 	map->size.y = 0;
 	line = get_next_line(fd);
+	if (!line)
+		return (0);
 	map->size.x = ft_strlen(line) - 1;
 	while (line)
 	{
@@ -90,7 +95,6 @@ int	get_rowcol(t_map *map, char *file)
 		line = get_next_line(fd);
 		map->size.y++;
 	}
-	free(line);
 	close(fd);
 	return (1);
 }
