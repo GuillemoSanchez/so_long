@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:21 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 13:50:47 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 14:58:04 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	on_key_release(int key, t_game *game)
 	else if (key == ARROW_RIGHT || key == KEY_D)
 		game->actions.key_right = 0;
 	else if (key == ESC)
-		ft_close();
+		game_over(game);
 	else
 		return (0);
 	return (0);
