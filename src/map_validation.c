@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:35:38 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 11:54:19 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:22:43 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,7 @@ int	get_rowcol(t_map *map, char *file)
 	}
 	free(line);
 	close(fd);
-	if (map->size.x != map->size.y)
-		return (1);
-	return (0);
+	return (1);
 }
 
 int	check_border(t_map *map)

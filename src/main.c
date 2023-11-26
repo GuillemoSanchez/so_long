@@ -6,22 +6,19 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:35:50 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 12:28:00 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:55:58 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/game.h"
-
-void	check_leaks(void)
-{
-	system("leaks so_long");
-}
 
 void	game_init(char *path)
 {
 	t_game	game;
 
 	game.map.total_collec = 0;
+	game.f_p = 0;
+	game.f_e = 0;
 	if (init_map(&game, path))
 	{
 		game.mlx = mlx_init();
@@ -37,10 +34,9 @@ void	game_init(char *path)
 
 int	main(int argc, char **argv)
 {
-	atexit(check_leaks);
 	if (argc == 2)
 		game_init(argv[1]);
 	else
-		printf("Error no puedes meter más de un mapa\n");
+		ft_printf("\033[0;31m" "Error no puedes meter más de un mapa\n");
 	return (0);
 }

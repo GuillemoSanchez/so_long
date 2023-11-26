@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:11 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 12:32:14 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 14:03:16 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_image	new_file_img(char *path, void *mlx)
 	image.img_ptr = mlx_xpm_file_to_image(mlx, path,
 			&image.size.x, &image.size.y);
 	if (!image.img_ptr)
-		printf("File could not be read%s\n", path);
+		ft_printf("\033[0;31m" "File could not be read%s\n", path);
 	else
 		image.addr = mlx_get_data_addr(image.img_ptr, &(image.bpp),
 				&(image.line_size), &(image.endian));
@@ -59,18 +59,28 @@ void	move_update(t_game *game)
 	if (game->actions.key_right == 1
 		&& game->map.coords[game->player.pos.y][game->player.pos.x + 1] != '1')
 	{
-		game->move;
+		game->move++;
 		game->player.pos.x++;
 	}
-	else if (game->actions.key_left
+	else if (game->actions.key_left == 1
 		&& game->map.coords[game->player.pos.y][game->player.pos.x - 1] != '1')
+	{
+		game->move++;
 		game->player.pos.x--;
-	else if (game->actions.key_up
+	}
+	else if (game->actions.key_up == 1
 		&& game->map.coords[game->player.pos.y - 1][game->player.pos.x] != '1')
+	{
+		game->move++;
 		game->player.pos.y--;
-	else if (game->actions.key_down
+	}
+	else if (game->actions.key_down == 1
 		&& game->map.coords[game->player.pos.y + 1][game->player.pos.x] != '1')
+	{
+		game->move++;
 		game->player.pos.y++;
+	}
+	ft_printf("%d\n", game->move);
 }
 
 void	change_exit(t_game *game)

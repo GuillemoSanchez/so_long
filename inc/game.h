@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:53:36 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 12:02:53 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:27:58 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,7 @@ typedef struct s_game
 	void			*mlx;
 	t_window		window;
 	t_map			map;
-    // t_image          *img;
 	t_player		player;
-    // t_enemy          *enemy;
 	t_textures		textures;
 	t_actions		actions;
 	int				collect;

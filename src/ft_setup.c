@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:21 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 12:26:17 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:50:47 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	game_over(t_game *game)
 	free_img(game);
 	mlx_destroy_window(game->mlx, game->window.win);
 	if (game->collect == game->map.total_collec)
-		ft_printf("YOU WIN\n");
+		ft_printf("\033[0;32m" "🎊 YOU WIN!! 🎊\n");
 	else
-		ft_printf("YOU LOSE\n");
+		ft_printf("\033[0;31m" "YOU LOSE!! 🤒\n");
 	ft_close();
 }
 
@@ -51,7 +51,7 @@ int	on_key_release(int key, t_game *game)
 	else if (key == ARROW_RIGHT || key == KEY_D)
 		game->actions.key_right = 0;
 	else if (key == ESC)
-		game_over(game);
+		ft_close();
 	else
 		return (0);
 	return (0);

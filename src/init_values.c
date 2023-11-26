@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:30:44 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 11:58:10 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:31:55 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ void	get_all(t_game *game)
 			{
 				game->player.pos.x = j;
 				game->player.pos.y = i;
-				game->f_p = 1;
+				game->f_p++;
 			}
 			if (game->map.coords[i][j] == 'E')
-				game->f_e = 1;
+				game->f_e++;
 			j++;
 		}
 		i++;

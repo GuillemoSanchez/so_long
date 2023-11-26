@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 11:50:49 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 11:50:50 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:54:26 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@
 # define OPEN		"textures/ladder.xpm"
 
 /*--- COINS ---*/
-# define COIN		"textures/07.xpm"
+# define COIN		"textures/coin.xpm"
 #endif
