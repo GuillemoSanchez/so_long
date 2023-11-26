@@ -13,7 +13,7 @@ TITLE			=	\033[38;5;33m
 BIN = bin
 DIR_SRC = src
 INCLUDE = -I inc
-CFLAGS = -Wall -Wextra -Werror -g 
+CFLAGS = -Wall -Wextra -Werror -g
 CC = gcc $(CFLAGS) $(INCLUDE)
 
 # <------ MLX ------>

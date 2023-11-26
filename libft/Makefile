@@ -46,7 +46,11 @@ SRC =   ft_atoi.c \
 		ft_lstmap_bonus.c \
 		ft_split.c \
 		get_next_line.c \
-		ft_utils.c
+		ft_utils.c \
+		ft_printf.c \
+		ft_parse.c \
+		ft_parse_hex.c \
+		functions.c
 
 OBJS =	$(SRC:.c=.o)
 

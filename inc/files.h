@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   files.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/26 11:50:49 by guisanch          #+#    #+#             */
+/*   Updated: 2023/11/26 11:50:50 by guisanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILES_H
 # define FILES_H
 
@@ -7,5 +19,9 @@
 /*--- TEXTURES ---*/
 # define WALL		"textures/bush.xpm"
 # define FLOOR		"textures/floor.xpm"
-# define EXIT		"textures/exit.xpm"
+# define CLOSE		"textures/exit.xpm"
+# define OPEN		"textures/ladder.xpm"
+
+/*--- COINS ---*/
+# define COIN		"textures/07.xpm"
 #endif

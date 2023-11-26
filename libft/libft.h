@@ -6,7 +6,7 @@
 /*   By: guiller <guiller@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:03:25 by guisanch          #+#    #+#             */
-/*   Updated: 2023/10/26 17:06:47 by guiller          ###   ########.fr       */
+/*   Updated: 2023/11/22 19:03:23 by guiller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
+# include <stdarg.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 
@@ -66,11 +68,28 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+
+/*--- GNL ---*/
 char	*ft_strchr_gnl(const char *word, char chr);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*read_to_stash(int fd, char *stash);
 char	*ft_new_stash(char *stash);
 char	*ft_get_line(char *stash);
 char	*get_next_line(int fd);
+
+/*--- FT_PRINTF ---*/
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+size_t	ft_strlen(const char *str);
+void	ft_parse_arg(char str, va_list arg, int *total_write);
+void	ft_print_char(va_list arg, int *total_write);
+void	ft_print_string(va_list arg, int *total_write);
+void	ft_print_int(va_list arg, char str, int *total_write);
+void	ft_print_unsig_int(va_list arg, char str, int *total_write);
+void	ft_print_hexa(va_list arg, int *total_write, char str);
+void	ft_print_pointer(va_list arg, int *total_write, char str);
+int		ft_count_num(unsigned long long number, int base);
+char	*convertidor(unsigned long long num, int base, char chr);
+int		ft_printf(char const *str, ...);
 # endif
 #endif

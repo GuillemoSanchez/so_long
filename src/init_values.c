@@ -6,11 +6,21 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:30:44 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/01 16:06:42 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 11:58:10 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/game.h"
+
+void	init_move(t_game *game)
+{
+	game->actions.key_down = 0;
+	game->actions.key_left = 0;
+	game->actions.key_right = 0;
+	game->actions.key_up = 0;
+	game->collect = 0;
+	game->move = 0;
+}
 
 void	get_all(t_game *game)
 {
@@ -38,4 +48,5 @@ void	get_all(t_game *game)
 		}
 		i++;
 	}
+	init_move(game);
 }

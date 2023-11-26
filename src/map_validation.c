@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:35:38 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/21 18:35:41 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 11:54:19 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	check_row(char *line, int x)
 
 	i = 0;
 	while (line[i] != '\n' && line[i])
-			i++;
+		i++;
 	if (i == x)
 		return (1);
 	return (0);

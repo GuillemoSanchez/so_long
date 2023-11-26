@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guiller <guiller@student.42.fr>            +#+  +:+       +#+        */
+/*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:53:36 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/20 19:03:05 by guiller          ###   ########.fr       */
+/*   Updated: 2023/11/26 12:02:53 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,11 @@ typedef struct s_vector {
 	int	y;
 }		t_vector;
 
-typedef enum e_bool {
-	false,
-	true
-}		t_bool;
-
 typedef struct s_actions {
-	t_bool	key_up;
-	t_bool	key_down;
-	t_bool	key_left;
-	t_bool	key_right;
+	int	key_up;
+	int	key_down;
+	int	key_left;
+	int	key_right;
 }		t_actions;
 
 typedef struct s_window{
@@ -99,14 +94,6 @@ typedef struct s_player
 
 // }        t_enemy;
 
-typedef struct s_directions
-{
-	int	east;
-	int	west;
-	int	up;
-	int	down;
-}		t_directions;
-
 typedef struct s_game
 {
 	void			*mlx;
@@ -115,12 +102,12 @@ typedef struct s_game
     // t_image          *img;
 	t_player		player;
     // t_enemy          *enemy;
-	t_directions	direction;
 	t_textures		textures;
 	t_actions		actions;
 	int				collect;
 	int				f_p;
 	int				f_e;
+	int				move;
 }		t_game;
 /*--- MAP VALIDATION ---*/
 int			fill(t_map *map, t_vector size, t_vector cur);
@@ -150,9 +137,13 @@ int			ft_close(void);
 int			on_key_press(int key, t_game *game);
 int			on_key_release(int key, t_game *game);
 void		game_over(t_game *game);
+int			update(t_game *game);
 
 /*--- UTILS_IMG ---*/
-t_image	new_file_img(char *path,  void *mlx);
-void	init_img(t_game *game);
-void	draw_img(t_game *game, int x, int y, char c);
+t_image		new_file_img(char *path, void *mlx);
+void		init_img(t_game *game);
+void		draw_img(t_game *game, int x, int y, char c);
+void		change_exit(t_game *game);
+void		move_update(t_game *game);
+
 #endif
