@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:04 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 13:53:48 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:07:14 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	read_map(t_map *map, char *file)
 		if (!map->coords)
 		{
 			close(fd);
-			printf("Error");
+			ft_printf("\033[0;31m" "Error\n reservar memoria\n");
 			return ;
 		}
 		line = get_next_line(fd);
@@ -80,12 +80,12 @@ int	init_map(t_game *game, char *path)
 		else
 		{
 			free_map(&game->map);
-			ft_printf("\033[0;31m" "Error, el mapa debe contener como"
+			ft_printf("\033[0;31m" "Error\n el mapa debe contener como"
 				"minimo 1 -> P, 1 -> E y 1 -> C\n");
 		}
 	}
 	else
-		ft_printf("\033[0;31m" "Error el mapa no es valido");
+		ft_printf("\033[0;31m" "Error\n el mapa no es valido");
 	return (0);
 }
 
@@ -99,7 +99,7 @@ void	draw_map(t_game *game)
 		|| !game->textures.exit.img_ptr || !game->textures.floor.img_ptr
 		|| !game->textures.wall.img_ptr)
 	{
-		ft_printf("\033[0;31m" "Error no se encuentra alguna imagen\n");
+		ft_printf("\033[0;31m" "Error\n no se encuentra alguna imagen\n");
 		ft_close();
 	}
 	else

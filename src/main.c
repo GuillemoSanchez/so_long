@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:35:50 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 13:55:58 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:05:57 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		game_init(argv[1]);
 	else
-		ft_printf("\033[0;31m" "Error no puedes meter más de un mapa\n");
+		ft_printf("\033[0;31m" "Error\n no puedes meter más de un mapa\n");
 	return (0);
 }
