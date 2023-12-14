@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:53:36 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/28 19:10:40 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/13 21:00:36 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,6 @@ typedef struct s_image{
 	int			endian;
 }		t_image;
 
-// typedef struct s_sprite{
-//  t_list      *animations;
-//  char        *name;
-//  char        *file_path;
-//  t_image     img;
-//  t_vector    dimensions;
-//  t_vector    pos;
-//  int         collec;
-// }        t_sprite;
-
 typedef struct s_textures
 {
 	t_image		wall;
@@ -83,16 +73,6 @@ typedef struct s_player
 	t_image		stich;
 	t_vector	pos;
 }		t_player;
-
-// typedef struct s_enemy
-// {
-//  t_sprite    walk_back;
-//  t_sprite    walk_front;
-//  t_sprite    walk_left;
-//  t_sprite    walk_right;
-//  int         move;
-
-// }        t_enemy;
 
 typedef struct s_game
 {
@@ -119,6 +99,7 @@ void		read_map(t_map *map, char *file);
 int			map_copy(t_game *game);
 int			init_map(t_game *game, char *path);
 void		draw_map(t_game *game);
+int			file_exist(char *file);
 
 /*--- INIT_VALUES ---*/
 void		get_all(t_game *game);

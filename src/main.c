@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:35:50 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/28 19:05:57 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/13 20:45:02 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@ void	game_init(char *path)
 	game.map.total_collec = 0;
 	game.f_p = 0;
 	game.f_e = 0;
-	if (init_map(&game, path))
+	if (file_exist(path) && init_map(&game, path))
 	{
 		game.mlx = mlx_init();
+		if (!game.mlx)
+		{
+			ft_printf("\033[0;31m" "Error al iniciar mlx\n");
+			exit(0);
+		}
 		game.window = ft_new_window(game.mlx, game.map.size.x * 64,
 				game.map.size.y * 64, "so_long");
 		init_img(&game);
@@ -37,6 +42,6 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		game_init(argv[1]);
 	else
-		ft_printf("\033[0;31m" "Error\n no puedes meter más de un mapa\n");
+		ft_printf("\033[0;31m" "Error no puedes meter más de un mapa\n");
 	return (0);
 }

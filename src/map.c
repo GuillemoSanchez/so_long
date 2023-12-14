@@ -6,11 +6,26 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:04 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/28 19:07:14 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/13 20:54:51 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/game.h"
+
+int	file_exist(char *file)
+{
+	int	fd;
+
+	fd = open(file, O_RDONLY);
+	if (fd < 1)
+	{
+		close(fd);
+		ft_printf("\033[0;31m" "Error\n al cargar el mapa\n");
+		return (0);
+	}
+	close(fd);
+	return (1);
+}
 
 void	read_map(t_map *map, char *file)
 {
@@ -37,7 +52,7 @@ void	read_map(t_map *map, char *file)
 			line = get_next_line(fd);
 		}
 		close (fd);
-		free(line);
+		map->coords[i] = NULL;
 	}
 }
 

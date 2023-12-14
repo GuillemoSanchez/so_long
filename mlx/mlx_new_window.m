@@ -418,6 +418,8 @@ int get_mouse_button(NSEventType eventtype)
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
   pixtexbuff = malloc(sizeof(unsigned int)*size_x*size_y);
+  if (!pixtexbuff)
+    return NULL;
   pixel_nb = size_x*size_y;
   while (pixel_nb--) pixtexbuff[pixel_nb] = 0xFF000000;
   pixel_nb = 0;

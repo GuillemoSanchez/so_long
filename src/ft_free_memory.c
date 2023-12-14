@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_memory.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: imurugar <imurugar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:36 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 13:45:07 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 16:12:21 by imurugar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ void	free_map(t_map *map)
 	int	i;
 
 	i = 0;
-	while (i < map->size.y && map->coords[i])
+	if (map->coords)
 	{
-		free(map->coords[i]);
-		i++;
+		while (i < map->size.y && map->coords[i])
+		{
+			free(map->coords[i]);
+			i++;
+		}
 	}
 	free(map->coords);
 }

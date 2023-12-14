@@ -6,59 +6,77 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:22:55 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 15:53:56 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:50:11 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr_gnl(const char *word, char chr)
+size_t	ft_strlen_gnl(const char *str)
 {
-	char	*res;
-	int		cont;
+	size_t	i;
 
-	cont = 0;
-	if (!word)
+	i = 0;
+	if (!str)
 		return (0);
-	while (word[cont] != '\0')
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strchr_gnl(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	if (c == '\0')
+		return ((char *)&s[ft_strlen_gnl(s)]);
+	while (s[i] != '\0')
 	{
-		if (word[cont] == chr)
-		{
-			res = (char *)&word[cont];
-			return (res);
-		}
-		cont++;
+		if (s[i] == (char) c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	if (chr != '\0')
-		return (NULL);
-	res = (char *)&word[cont];
-	return (res);
+	return (0);
+}
+
+static char	*ft_strcpy_gnl(char *dest, const char *src)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 char	*ft_strjoin_gnl(char *s1, char *s2)
 {
-	size_t	i;
-	size_t	j;
 	char	*str;
 
 	if (!s1)
 	{
 		s1 = malloc(sizeof(char));
+		if (!s1)
+			return (NULL);
 		s1[0] = '\0';
 	}
 	if (!s2)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
+	str = malloc(sizeof(char) * ((ft_strlen_gnl(s1) + ft_strlen_gnl(s2)) + 1));
 	if (!str)
+	{
+		free (s1);
 		return (NULL);
-	i = -1;
-	j = 0;
-	if (s1)
-		while (s1[++i])
-			str[i] = s1[i];
-	while (s2[j])
-		str[i++] = s2[j++];
-	str[i] = '\0';
+	}
+	ft_strcpy_gnl(str, s1);
+	ft_strcpy_gnl(str + ft_strlen_gnl(s1), s2);
 	free(s1);
 	return (str);
 }

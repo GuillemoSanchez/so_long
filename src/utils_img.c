@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:36:11 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/28 19:07:49 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:01:22 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_image	new_file_img(char *path, void *mlx)
 	image.img_ptr = mlx_xpm_file_to_image(mlx, path,
 			&image.size.x, &image.size.y);
 	if (!image.img_ptr)
-		ft_printf("Error\n File could not be read%s\n", path);
+		printf("File could not be read%s\n", path);
 	else
 		image.addr = mlx_get_data_addr(image.img_ptr, &(image.bpp),
 				&(image.line_size), &(image.endian));

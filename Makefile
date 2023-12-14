@@ -13,7 +13,7 @@ TITLE			=	\033[38;5;33m
 BIN = bin
 DIR_SRC = src
 INCLUDE = -I inc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g
 CC = gcc $(CFLAGS) $(INCLUDE)
 
 # <------ MLX ------>
@@ -60,7 +60,7 @@ $(LIBFT_PATH) :
 
 clean:
 	@make -C $(LIBFT_DIR) -f $(LIBFT_MAKE) fclean
-	@make -C $(MLX_DIR) -f $(MLX_MAKE) clean
+	@make -C ${MLX_DIR} -f ${MLX_MAKE} clean
 	rm -rf $(BIN)
 
 fclean: clean

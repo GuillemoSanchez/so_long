@@ -70,6 +70,8 @@ void *mlx_init()
 
   // load font
   new_mlx->font = mlx_new_image(new_mlx, (FONT_WIDTH+2)*95, FONT_HEIGHT);
+  if (!new_mlx->font)
+    return NULL;
   i = 0;
   while (i < 4*(FONT_WIDTH+2)*95*FONT_HEIGHT)
     {

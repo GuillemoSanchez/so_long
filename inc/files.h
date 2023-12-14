@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 11:50:49 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 13:54:26 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/13 20:49:35 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define FILES_H
 
 /*--- PERSONAJE ---*/
-# define STICH		"textures/stich.xpm"
+# define STICH		"./textures/stich.xpm"
 
 /*--- TEXTURES ---*/
-# define WALL		"textures/bush.xpm"
-# define FLOOR		"textures/floor.xpm"
-# define CLOSE		"textures/exit.xpm"
-# define OPEN		"textures/ladder.xpm"
+# define WALL		"./textures/bush.xpm"
+# define FLOOR		"./textures/floor.xpm"
+# define CLOSE		"./textures/exit.xpm"
+# define OPEN		"./textures/ladder.xpm"
 
 /*--- COINS ---*/
-# define COIN		"textures/coin.xpm"
+# define COIN		"./textures/coin.xpm"
 #endif

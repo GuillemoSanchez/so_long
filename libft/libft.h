@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guiller <guiller@student.42.fr>            +#+  +:+       +#+        */
+/*   By: imurugar <imurugar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:03:25 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/22 19:03:23 by guiller          ###   ########.fr       */
+/*   Updated: 2023/11/26 16:08:10 by imurugar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,13 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 
 /*--- GNL ---*/
-char	*ft_strchr_gnl(const char *word, char chr);
+char	*ft_strchr_gnl(const char *s, int c);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*read_to_stash(int fd, char *stash);
 char	*ft_new_stash(char *stash);
 char	*ft_get_line(char *stash);
 char	*get_next_line(int fd);
+size_t	ft_strlen_gnl(const char *str);
 
 /*--- FT_PRINTF ---*/
 void	ft_putchar(char c);

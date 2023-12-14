@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:35:38 by guisanch          #+#    #+#             */
-/*   Updated: 2023/11/26 15:40:07 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/12/13 21:00:25 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	fill(t_map *map, t_vector size, t_vector cur)
 
 	if (cur.x < 0 || cur.y < 0 || cur.x >= size.x || cur.y >= size.y)
 		return (0);
+	if (!map->coords || !map->coords[cur.y])
+		return (1);
 	current_cell = map->coords[cur.y][cur.x];
 	if (current_cell == 'C')
 	{
