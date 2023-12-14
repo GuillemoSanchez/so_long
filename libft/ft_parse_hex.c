@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillermo <guisanch@student.42.fr>        +#+  +:+       +#+        */
+/*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:52:59 by guisanch          #+#    #+#             */
 /*   Updated: 2023/07/06 12:53:21 by guisanch        ###   ########.fr       */
